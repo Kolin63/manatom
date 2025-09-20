@@ -21,17 +21,17 @@ typedef uint8_t atno;
 #define ELEMENTS_AMT 118
 
 atno get_atno(const element e);
-void set_atno(element *e, const atno a);
+void set_atno(element* e, const atno a);
 
 bool is_tapped(const element e);
-void set_tapped(element *e, const bool t);
+void set_tapped(element* e, const bool t);
 
-const char *get_symbol(const element e);
+const char* get_symbol(const element e);
 
 void print_element(const element e);
 
 [[maybe_unused]]
-static const char *symbols[ELEMENTS_AMT] = {
+static const char* symbols[ELEMENTS_AMT] = {
     "H",  "He", "Li", "Be", "B",  "C",  "N",  "O",  "F",  "Ne", "Na", "Mg",
     "Al", "Si", "P",  "S",  "Cl", "Ar", "K",  "Ca", "Sc", "Ti", "V",  "Cr",
     "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr",
