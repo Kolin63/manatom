@@ -21,7 +21,7 @@ int main() {
   set_atno(&o, 8);
   set_tapped(&o, true);
 
-  element* water[] = { &h, &h2, &o };
+  compound water[] = { &h, &h2, &o };
   print_compound(*water, 3);
   printf("\n");
 

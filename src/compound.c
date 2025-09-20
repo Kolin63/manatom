@@ -5,7 +5,7 @@
 #include "compound.h"
 #include "element.h"
 
-void print_compound(const element *c, const size_t s) {
+void print_compound(const compound c, const size_t s) {
   int amt = 0;
   const element* prev = &c[0];
 

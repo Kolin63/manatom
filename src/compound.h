@@ -10,6 +10,8 @@
 
 #include "element.h"
 
-void print_compound(const element* c, const size_t s);
+typedef element* compound;
+
+void print_compound(const compound c, const size_t s);
 
 #endif
