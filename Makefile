@@ -1,22 +1,22 @@
-CXX := g++
-CXXFLAGS := -std=c++20 -Wall -Wextra
+CC := gcc
+CCFLAGS := -Wall -Wextra
 
 SRC_DIR := src
 BUILD_DIR := build
 
-SRCS := $(wildcard $(SRC_DIR)/*.cc)
-OBJS := $(patsubst $(SRC_DIR)/%.cc,$(BUILD_DIR)/%.o,$(SRCS))
+SRCS := $(wildcard $(SRC_DIR)/*.c)
+OBJS := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 TARGET := main
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CC) $(CCFLAGS) -o $@ $^
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cc
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(BUILD_DIR) $(TARGET)

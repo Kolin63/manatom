@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) Colin Melican 2025
 
-#include <iostream>
+#include <stdio.h>
 
 int main() {
-  std::cout << "Hello, World!\n";
+  printf("Hello, World!\n");
   return 0;
 }
