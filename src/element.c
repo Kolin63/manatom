@@ -21,7 +21,7 @@ void set_tapped(element *e, const bool t) {
 }
 
 const char *get_symbol(const element e) {
-  return symbols[get_atno(e)];
+  return symbols[get_atno(e - 1)];
 }
 
 void print_element(const element e) {
