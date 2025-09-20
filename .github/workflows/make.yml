@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: make
       run: make
-  build-ubuntu:
+  build-windows:
 
     runs-on: windows-latest
 
@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: make
       run: make
-  build-ubuntu:
+  build-macos:
 
     runs-on: macos-latest
 
