@@ -7,8 +7,10 @@
 int main() {
   element h;
   set_atno(&h, 1);
-  printf("%b, %i\n", is_tapped(h), get_atno(h));
+  print_element(h);
+  printf("\n");
   set_tapped(&h, true);
-  printf("%b, %i\n", is_tapped(h), get_atno(h));
+  print_element(h);
+  printf("\n");
   return 0;
 }

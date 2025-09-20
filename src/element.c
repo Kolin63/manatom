@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) Colin Melican 2025
 
+#include <stdio.h>
 #include "element.h"
 
 atno get_atno(const element e) {
@@ -17,4 +18,12 @@ bool is_tapped(const element e) {
 
 void set_tapped(element *e, const bool t) {
   *e = get_atno(*e) | (t << 7);
+}
+
+const char *get_symbol(const element e) {
+  return symbols[get_atno(e)];
+}
+
+void print_element(const element e) {
+  printf("%c%s", ' ' + is_tapped(e) * ('*' - ' '), get_symbol(e));
 }
