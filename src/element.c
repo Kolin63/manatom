@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "element.h"
+#include "symbols.h"
 
 atno get_atno(const element e) {
   return e & 0x7f;
@@ -22,14 +23,14 @@ void set_tapped(element* e, const bool t) {
 }
 
 atno make_element(const char *symbol) {
-  for (size_t i = 0; i < ELEMENTS_AMT; i++) {
-    if (strcmp(symbol, symbols[i]) == 0) return i + 1;
+  for (size_t i = 0; i <= ELEMENTS_AMT; i++) {
+    if (strcmp(symbol, symbols[i]) == 0) return i;
   }
   return 0;
 }
 
 const char* get_symbol(const element e) {
-  return symbols[get_atno(e - 1)];
+  return symbols[get_atno(e)];
 }
 
 void print_element(const element e) {
