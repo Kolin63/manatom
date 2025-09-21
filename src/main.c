@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) Colin Melican 2025
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "command.h"
 #include "compound.h"
 #include "element.h"
 #include "inventory.h"
@@ -20,6 +22,13 @@ int main() {
   compound water[] = { &world[0], &world[3] };
   print_compound(water, 2);
   printf("\n");
+
+  while (true) {
+    char input[64];
+    get_input(input, 64);
+    printf("%s", input);
+    if (IF_CMD(input, "exit") || IF_CMD(input, "quit")) break;
+  }
 
   free(world);
 
