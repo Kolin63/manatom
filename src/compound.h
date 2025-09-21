@@ -12,6 +12,6 @@
 
 typedef element* compound;
 
-void print_compound(const compound c, const size_t s);
+void print_compound(const compound* c, const size_t s);
 
 #endif
