@@ -20,8 +20,8 @@ int main() {
   print_world(world, world_size);
   printf("\n\n");
 
-  compound water[] = { &world[0], &world[3] };
-  print_compound(water, 2);
+  compound water[] = { &world[0], &world[1], &world[10] };
+  print_compound(water, 3);
   printf("\n");
 
   while (true) {
