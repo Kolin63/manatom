@@ -27,7 +27,6 @@ int main() {
   while (true) {
     char input[64];
     get_input(input, 64);
-    printf("%s", input);
     if (IF_CMD(input, "exit") || IF_CMD(input, "quit")) break;
   }
 
