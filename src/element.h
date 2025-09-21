@@ -26,7 +26,7 @@ void set_atno(element* e, const atno a);
 bool is_tapped(const element e);
 void set_tapped(element* e, const bool t);
 
-atno make_element(const char* symbol);
+element make_element(const char* symbol);
 const char* get_symbol(const element e);
 
 void print_element(const element e);
