@@ -26,5 +26,9 @@ int main() {
   print_compound(*water, 3);
   printf("\n");
 
+  element k = make_element("K");
+  print_element(k);
+  printf("\n");
+
   return 0;
 }

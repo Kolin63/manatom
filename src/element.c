@@ -2,6 +2,7 @@
 // Copyright (c) Colin Melican 2025
 
 #include <stdio.h>
+#include <string.h>
 #include "element.h"
 
 atno get_atno(const element e) {
@@ -18,6 +19,13 @@ bool is_tapped(const element e) {
 
 void set_tapped(element* e, const bool t) {
   *e = get_atno(*e) | (t << 7);
+}
+
+atno make_element(const char *symbol) {
+  for (size_t i = 0; i < ELEMENTS_AMT; i++) {
+    if (strcmp(symbol, symbols[i]) == 0) return i + 1;
+  }
+  return 0;
 }
 
 const char* get_symbol(const element e) {
