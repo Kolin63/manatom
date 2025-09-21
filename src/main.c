@@ -2,33 +2,26 @@
 // Copyright (c) Colin Melican 2025
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "compound.h"
 #include "element.h"
+#include "inventory.h"
 
 int main() {
-  element h;
-  set_atno(&h, 1);
-  print_element(h);
-  printf("\n");
-  set_tapped(&h, true);
-  print_element(h);
+  const char* world_symbols[] = { "H", "He", "C", "O", "K" };
+  const size_t world_size = sizeof(world_symbols) / sizeof(world_symbols[0]);
+  element* world = make_world(*world_symbols, world_size);
+
+  print_world(world, world_size);
+  printf("\n\n");
+
+  compound water[] = { &world[0], &world[3] };
+  print_compound(water, 2);
   printf("\n");
 
-  element h2;
-  set_atno(&h2, 1);
-  set_tapped(&h2, true);
-  element o;
-  set_atno(&o, 8);
-  set_tapped(&o, true);
-
-  compound water[] = { &h, &h2, &o };
-  print_compound(*water, 3);
-  printf("\n");
-
-  element k = make_element("K");
-  print_element(k);
-  printf("\n");
+  free(world);
 
   return 0;
 }
