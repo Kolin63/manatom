@@ -19,7 +19,7 @@ void print_world(const element* i, const size_t s) {
   for (size_t idx = 0; idx < s; idx++) {
     print_element(i[idx]);
     printf(" ");
-    if (idx + 1 % 10 == 0) printf("\n");
+    if ((idx + 1) % 10 == 0) printf("\n");
   }
 }
 
@@ -27,7 +27,7 @@ void print_einv(const einv* i, const size_t s) {
   for (size_t idx = 0; idx < s; idx++) {
     print_element(*i[idx]);
     printf(" ");
-    if (idx + 1 % 10 == 0) printf("\n");
+    if ((idx + 1) % 10 == 0) printf("\n");
   }
 }
 
