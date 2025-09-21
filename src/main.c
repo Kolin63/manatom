@@ -12,10 +12,11 @@
 #include "inventory.h"
 
 int main() {
-  const char* world_symbols[] = { "H", "He", "C", "O", "K" };
+  const char* world_symbols[] = { "H", "H", "H", "H", "H", "H", "H", "H", "He", "C", "O", "K", "Au" };
   const size_t world_size = sizeof(world_symbols) / sizeof(world_symbols[0]);
-  element* world = make_world(*world_symbols, world_size);
+  element* world = make_world(world_symbols, world_size);
 
+  printf("World: (%zi)\n", world_size);
   print_world(world, world_size);
   printf("\n\n");
 

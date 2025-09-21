@@ -10,7 +10,7 @@
 typedef element* einv;
 typedef compound* cinv;
 
-element* make_world(const char* symbols, const size_t size);
+element* make_world(const char* symbols[], const size_t size);
 
 void print_world(const element* i, const size_t s);
 void print_einv(const einv* i, const size_t s);

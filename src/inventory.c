@@ -7,15 +7,10 @@
 #include "inventory.h"
 #include "element.h"
 
-element* make_world(const char* symbols, const size_t size) {
+element* make_world(const char* symbols[], const size_t size) {
   element* world = malloc(size);
-  const char* ptr = &symbols[0];
   for (size_t i = 0; i < size; i++) {
-    world[i] = make_element(ptr);
-    while (*ptr != '\0') {
-      ptr++;
-    }
-    ptr++;
+    world[i] = make_element(symbols[i]);
   }
   return world;
 }
