@@ -8,7 +8,7 @@
 
 #include "world.h"
 
-static einv player_inv[] = {0};
+static einv player_inv[32] = {0};
 static uint8_t player_is_compound = 0;
 
 static uint8_t window_used = 0;
