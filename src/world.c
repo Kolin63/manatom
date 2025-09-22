@@ -25,6 +25,7 @@ void print_player_inv() {
   else {
     print_compound(player_inv);
   }
+  if (has_cup) printf("(you have a cup)\n");
 }
 
 void boy_inspect() {
