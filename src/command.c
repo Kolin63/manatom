@@ -8,7 +8,7 @@
 #include "command.h"
 #include "compound.h"
 #include "inventory.h"
-#include "player.h"
+#include "world.h"
 
 void print_help() {
   printf("\
@@ -28,11 +28,17 @@ Commands:\n\
   \n\
   quit | exit - exit the game\n\
   \n\
+NOTE:\n\
+You may get to a point where you are STUCK\n\
+and CAN NOT CONTINUE.\n\
+To restart, simply exit the game and open\n\
+it again.\n\
+\n\
 ");
 }
 
 void get_input(char* buf, size_t s) {
-  printf("> ");
+  printf("\n> ");
   fgets(buf, s, stdin);
 }
 
@@ -52,16 +58,67 @@ uint8_t do_cmd(char* cmd) {
     return 0;
   }
   else if (IF_CMD(cmd, "inv")) {
-    if (player_is_compound == 0) print_einv(player_inv);
-    else print_compound(&player_inv);
+    print_player_inv();
     return 0;
   }
   else if (IF_CMD(cmd, "inspect")) {
-
+    cmd_inspect(get_params(cmd));
+    return 0;
+  }
+  else if (IF_CMD(cmd, "use")) {
+    cmd_use(get_params(cmd));
+    return 0;
+  }
+  else if (IF_CMD(cmd, "talk")) {
+    cmd_talk(get_params(cmd));
+    return 0;
   }
   else if (IF_CMD(cmd, "exit") || IF_CMD(cmd, "quit")) {
     return 1;
   }
   printf("Unknown command %s", cmd);
   return 0;
+}
+
+void cmd_talk(char* param) {
+  if (IF_CMD(param, "boy")) boy_talk();
+  else if (IF_CMD(param, "man")) man_talk();
+  else if (IF_CMD(param, "cake") || IF_CMD(param, "candle"))
+		printf("... It says nothing.\n");
+  else if (IF_CMD(param, "window"))
+		printf("... It says nothing.\n");
+  else if (IF_CMD(param, "presents"))
+		printf("... It says nothing.\n");
+  else if (IF_CMD(param, "balloons"))
+		printf("... It says nothing.\n");
+  else printf("Invalid parameter %s\n", param);
+}
+
+void cmd_inspect(char* param) {
+  if (IF_CMD(param, "boy")) boy_inspect();
+  else if (IF_CMD(param, "man")) man_talk();
+  else if (IF_CMD(param, "cake") || IF_CMD(param, "candle")) cake_inspect();
+  else if (IF_CMD(param, "window")) window_inspect();
+  else if (IF_CMD(param, "presents")) presents_inspect();
+  else if (IF_CMD(param, "balloons")) balloons_inspect();
+  else
+    printf("\
+Things to inspect:\n\
+- boy\n\
+- man\n\
+- cake\n\
+- presents\n\
+- balloons\n\
+- window\n\
+");
+}
+
+void cmd_use(char* param) {
+  if (IF_CMD(param, "boy")) boy_use();
+  else if (IF_CMD(param, "man")) man_talk();
+  else if (IF_CMD(param, "cake") || IF_CMD(param, "candle")) cake_use();
+  else if (IF_CMD(param, "window")) window_use();
+  else if (IF_CMD(param, "presents")) presents_use();
+  else if (IF_CMD(param, "balloons")) balloons_use();
+  else printf("Invalid parameter %s\n", param);
 }

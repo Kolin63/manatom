@@ -19,4 +19,8 @@ char* get_params(char* cmd);
 // returns non zero if program should exit
 uint8_t do_cmd(char* cmd);
 
+void cmd_talk(char* param);
+void cmd_inspect(char* param);
+void cmd_use(char* param);
+
 #endif

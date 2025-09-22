@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) Colin Melican 2025
 
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,8 +10,8 @@
 
 void print_einv(const einv* i) {
   const element* ptr = &i[0];
-  for (size_t idx = 0; *ptr != 0; idx++) {
-    print_element(*ptr);
+  for (size_t idx = 0; i[idx] != 0; idx++) {
+    print_element(i[idx]);
     printf(" ");
     if ((idx + 1) % 10 == 0) printf("\n");
     ptr++;
@@ -26,8 +27,32 @@ void clear_einv(einv* i) {
 }
 
 void einv_add(einv* i, element e) {
-  while (*i != 0) i++;
-  *i = e;
+  size_t idx = 0;
+  while (i[idx] != 0) idx++;
+  i[idx] = e;
+}
+
+uint8_t einv_remove(einv* i, const element e) {
+  size_t idx = 0;
+  uint8_t found = 0;
+  while (1) {
+    if (i[idx] == 0) return 0;
+    if (!found && i[idx] == e)
+      found = 1;
+    if (found) {
+      i[idx] = i[idx + 1];
+    }
+  }
+  return 1;
+}
+
+uint8_t einv_contains(const einv* i, const element e) {
+  size_t idx = 0;
+  while (i[idx] != 0) {
+    if (i[idx] == e) return 1;
+    idx++;
+  }
+  return 0;
 }
 
 int element_sort(const void* a, const void* b) {

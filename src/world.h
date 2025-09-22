@@ -9,9 +9,15 @@
 #include "element.h"
 #include "inventory.h"
 
+void print_player_inv();
+
 void boy_inspect();
 void boy_use();
 void boy_talk();
+
+void man_inspect();
+void man_use();
+void man_talk();
 
 void cake_inspect();
 void cake_use();
