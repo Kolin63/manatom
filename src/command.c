@@ -70,8 +70,7 @@ uint8_t do_cmd(char* cmd) {
     return 0;
   }
   else if (IF_CMD(cmd, "talk")) {
-    cmd_talk(get_params(cmd));
-    return 0;
+    return cmd_talk(get_params(cmd));
   }
   else if (IF_CMD(cmd, "exit") || IF_CMD(cmd, "quit")) {
     return 1;
@@ -80,8 +79,8 @@ uint8_t do_cmd(char* cmd) {
   return 0;
 }
 
-void cmd_talk(char* param) {
-  if (IF_CMD(param, "boy")) boy_talk();
+uint8_t cmd_talk(char* param) {
+  if (IF_CMD(param, "boy")) return boy_talk();
   else if (IF_CMD(param, "man")) man_talk();
   else if (IF_CMD(param, "cake") || IF_CMD(param, "candle"))
 		printf("... It says nothing.\n");
@@ -92,6 +91,7 @@ void cmd_talk(char* param) {
   else if (IF_CMD(param, "balloons"))
 		printf("... It says nothing.\n");
   else printf("Invalid parameter %s\n", param);
+  return 0;
 }
 
 void cmd_inspect(char* param) {

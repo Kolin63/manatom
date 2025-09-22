@@ -13,7 +13,7 @@ void print_player_inv();
 
 void boy_inspect();
 void boy_use();
-void boy_talk();
+uint8_t boy_talk();
 
 void man_inspect();
 void man_use();

@@ -36,7 +36,7 @@ void boy_use() {
   printf("You really shouldn't dehumanize a person like that.\n");
 }
 
-void boy_talk() {
+uint8_t boy_talk() {
   if (boy_talked == 0) {
     boy_talked = 1;
     printf("\
@@ -48,8 +48,18 @@ So it's not the worst.\n\
     ");
   }
   else {
-    printf("TODO\n");
+    if (player_is_compound && player_inv[0] == 1 && player_inv[1] == 1
+      && player_inv[2] == 8) {
+      if (has_cup) {
+        printf("Thank you so much for the water!\nMy birthday is saved!\n");
+        return 1;
+      }
+      else
+        printf("You've got water, but I can't drink it without a cup!\n");
+    }
+    else printf("Get me some water, please!\n");
   }
+  return 0;
 }
 
 void man_inspect() {
