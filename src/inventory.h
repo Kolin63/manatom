@@ -10,6 +10,8 @@
 typedef element einv;
 
 void print_einv(const einv* i);
-void clear_einv();
+void clear_einv(einv* i);
+void einv_add(einv* i, const element e);
+void sort_einv(einv* i);
 
 #endif

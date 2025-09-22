@@ -10,7 +10,7 @@
 
 #include "element.h"
 
-typedef element* compound;
+typedef element compound[];
 
 void print_compound(const compound* c);
 

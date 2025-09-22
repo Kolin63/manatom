@@ -8,10 +8,8 @@
 
 #include "inventory.h"
 
-static einv* player_inv = {};
-static compound player_compound = {};
+static einv player_inv[] = {0};
+static uint8_t player_is_compound = 0;
 static uint8_t player_cup = 0;
-
-void make_player_inv();
 
 #endif

@@ -6,6 +6,7 @@
 #include <string.h>
 
 #include "command.h"
+#include "compound.h"
 #include "inventory.h"
 #include "player.h"
 
@@ -24,6 +25,9 @@ Commands:\n\
   use <object> - use an object\n\
   \n\
   talk <person> - talk to somebody\n\
+  \n\
+  quit | exit - exit the game\n\
+  \n\
 ");
 }
 
@@ -48,7 +52,8 @@ uint8_t do_cmd(char* cmd) {
     return 0;
   }
   else if (IF_CMD(cmd, "inv")) {
-    print_einv(player_inv);
+    if (player_is_compound == 0) print_einv(player_inv);
+    else print_compound(&player_inv);
     return 0;
   }
   else if (IF_CMD(cmd, "inspect")) {

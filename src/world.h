@@ -9,9 +9,6 @@
 #include "element.h"
 #include "inventory.h"
 
-static const element ballons[] = {2, 2};
-static const element presents[] = {13};
-
 void boy_inspect();
 void boy_use();
 void boy_talk();
