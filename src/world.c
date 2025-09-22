@@ -136,6 +136,14 @@ void presents_use() {
   if (!man_talked) {
     printf("You should probably leave these alone for now\n");
   }
+  else if (has_cup) {
+    printf("You leave the presents alone.\n");
+  }
+  else if (player_is_compound) {
+    printf("Your hands are full with all this ");
+    print_compound(player_inv);
+    printf(".\n");
+  }
   else if (einv_contains(player_inv, 50) || has_cup) {
     printf("You leave the presents alone.\n");
   }
