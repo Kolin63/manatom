@@ -223,5 +223,14 @@ like it too.\n\
       *ptr = *ptr - 1;
       ptr++;
     }
+    printf("\
+As you stand at the window, it becomes noticeably warmer.\n\
+Due to the fact that your cellular reception seems to have\n\
+gotten worse, you assume that this was the result of a solar\n\
+flare.\n\
+\n\
+Since solar flares are known to emit gamma rays, I wonder\n\
+if this had any effect on your atoms?\n\
+");
   }
 }
