@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #include "inventory.h"
+#include "compound.h"
 #include "element.h"
 
 element* make_world(const char* symbols[], const size_t size) {
@@ -24,6 +25,10 @@ void print_world(const element* i, const size_t s) {
 }
 
 void print_einv(const einv* i, const size_t s) {
+  if (s == 0) {
+    printf("Empty.\n");
+    return;
+  }
   for (size_t idx = 0; idx < s; idx++) {
     print_element(*i[idx]);
     printf(" ");
@@ -32,5 +37,13 @@ void print_einv(const einv* i, const size_t s) {
 }
 
 void print_cinv(const cinv* i, const size_t s) {
-
+  if (s == 0) {
+    printf("Empty.\n");
+    return;
+  }
+  for (size_t idx = 0; idx < s; idx++) {
+    print_compound(i[idx]);
+    printf(" ");
+    if ((idx + 1) % 10 == 0) printf("\n");
+  }
 }
