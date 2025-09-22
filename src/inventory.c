@@ -5,45 +5,15 @@
 #include <stdlib.h>
 
 #include "inventory.h"
-#include "compound.h"
 #include "element.h"
 
-element* make_world(const char* symbols[], const size_t size) {
-  element* world = malloc(size);
-  for (size_t i = 0; i < size; i++) {
-    world[i] = make_element(symbols[i]);
-  }
-  return world;
-}
-
-void print_world(const element* i, const size_t s) {
-  for (size_t idx = 0; idx < s; idx++) {
-    print_element(i[idx]);
+void print_einv(const einv* i) {
+  const element* ptr = &i[0];
+  for (size_t idx = 0; *ptr != 0; idx++) {
+    print_element(*ptr);
     printf(" ");
     if ((idx + 1) % 10 == 0) printf("\n");
+    ptr++;
   }
-}
-
-void print_einv(const einv* i, const size_t s) {
-  if (s == 0) {
-    printf("Empty.\n");
-    return;
-  }
-  for (size_t idx = 0; idx < s; idx++) {
-    print_element(*i[idx]);
-    printf(" ");
-    if ((idx + 1) % 10 == 0) printf("\n");
-  }
-}
-
-void print_cinv(const cinv* i, const size_t s) {
-  if (s == 0) {
-    printf("Empty.\n");
-    return;
-  }
-  for (size_t idx = 0; idx < s; idx++) {
-    print_compound(i[idx]);
-    printf(" ");
-    if ((idx + 1) % 10 == 0) printf("\n");
-  }
+  if (&i[0] == ptr) printf("Empty.\n");
 }

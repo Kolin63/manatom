@@ -48,7 +48,7 @@ uint8_t do_cmd(char* cmd) {
     return 0;
   }
   else if (IF_CMD(cmd, "inv")) {
-    print_cinv(player_inv, player_inv_size);
+    print_einv(player_inv);
     return 0;
   }
   else if (IF_CMD(cmd, "inspect")) {

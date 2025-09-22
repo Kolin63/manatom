@@ -8,9 +8,9 @@
 
 #include "inventory.h"
 
-static cinv* player_inv;
-static size_t player_inv_size;
-static uint8_t player_cup;
+static einv* player_inv = {};
+static compound player_compound = {};
+static uint8_t player_cup = 0;
 
 void make_player_inv();
 

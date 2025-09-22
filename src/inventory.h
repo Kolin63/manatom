@@ -7,13 +7,9 @@
 #include "compound.h"
 #include "element.h"
 
-typedef element* einv;
-typedef compound* cinv;
+typedef element einv;
 
-element* make_world(const char* symbols[], const size_t size);
-
-void print_world(const element* i, const size_t s);
-void print_einv(const einv* i, const size_t s);
-void print_cinv(const cinv* i, const size_t s);
+void print_einv(const einv* i);
+void clear_einv();
 
 #endif
