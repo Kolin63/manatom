@@ -1,0 +1,15 @@
+# ⚛️ Manatom
+A game about managing your atoms.
+
+## 🎮 Gameplay
+Manatom runs entirely in the shell. Type 'help' for information on commands.
+Commands follow the usual format of text adventure games, of `command
+[object]`, with some variation.
+
+The story of the game is about a ruined birthday party because the birthday boy
+is thirsty. So, you have to use some clever chemistry tricks to make water for
+him.
+
+## 🔧 Building and Development
+Manatom is written entirely in C with no external libraries. You can build it
+by cloning the repo and running `make`, then executing the `manatom` binary.
