@@ -39,9 +39,9 @@ uint8_t einv_remove(einv* i, const element e) {
     if (i[idx] == 0) return 0;
     if (!found && i[idx] == e)
       found = 1;
-    if (found) {
+    if (found)
       i[idx] = i[idx + 1];
-    }
+    idx++;
   }
   return 1;
 }

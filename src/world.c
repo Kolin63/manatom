@@ -83,6 +83,7 @@ No matter, I can make you an aluminium cup.\n\
 (You get a cup)\n\
 ");
     has_cup = 1;
+    einv_remove(player_inv, 50);
   }
   else {
     printf("How's that cup faring you?\n");
