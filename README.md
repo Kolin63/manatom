@@ -1,6 +1,8 @@
 # ⚛️ Manatom
 A game about managing your atoms.
 
+![demo](demo.gif)
+
 ## 🎮 Gameplay
 Manatom runs entirely in the shell. Type 'help' for information on commands.
 Commands follow the usual format of text adventure games, of `command
