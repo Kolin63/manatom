@@ -13,5 +13,13 @@ is thirsty. So, you have to use some clever chemistry tricks to make water for
 him.
 
 ## 🔧 Building and Development
-Manatom is written entirely in C with no external libraries. You can build it
-by cloning the repo and running `make`, then executing the `manatom` binary.
+Manatom is written entirely in C with no external libraries.
+
+To build and run the game:
+```sh
+git clone https://github.com/kolin63/manatom
+cd manatom
+make
+chmod +x manatom # for linux or macos users
+./manatom
+```
